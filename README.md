@@ -1,40 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Weather App 🌤️
 
-## Getting Started
+실시간 날씨 정보를 제공하는 웹 애플리케이션입니다. 현재 위치 기반의 날씨 정보 제공, 지역 검색, 즐겨찾기 기능을 제공합니다.
 
-First, run the development server:
+## 주요 기능
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. 위치 기반 날씨 정보 📍
+- Geolocation API를 활용한 사용자의 현재 위치 감지
+- Kakao Local API를 통한 좌표-주소 변환
+- Weather API를 통한 실시간 날씨 정보 제공
+- 시간별/일별 날씨 예보 제공
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. 지역 검색 기능 🔍
+- Kakao Local API를 활용한 주소 검색
+- 검색 결과에 실시간 날씨 정보 통합 제공
+- URL 쿼리 파라미터를 통한 히스토리 관리
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 3. 즐겨찾기 기능 ⭐
+- Local Storage를 활용한 즐겨찾기 데이터 영구 저장
+- 즐겨찾기한 지역의 실시간 날씨 정보 제공
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 기술 스택
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Frontend
+- Next.js 15 (Pages Router)
+- TypeScript
+- Tailwind CSS
+- Lucide React (아이콘)
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### API
+- Weather API (날씨 정보)
+- Kakao Local API (주소 검색 및 좌표 변환)
+- Geolocation API (현재 위치)
 
-## Learn More
+### 상태 관리 및 데이터 핸들링
+- React Hooks
+- Custom Hooks (useGeolocation, useCurrentLocation, useFavorites)
+- LocalStorage
 
-To learn more about Next.js, take a look at the following resources:
+## 기술적 구현 사항
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### 1. TypeScript를 활용한 타입 안정성 확보
+- API 응답에 대한 명확한 타입 정의
+- Props 인터페이스 정의를 통한 컴포넌트 간 데이터 전달 안정성 확보
+- 유틸리티 함수의 타입 안정성 보장
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. 커스텀 훅을 통한 로직 모듈화
+- `useGeolocation`: 위치 정보 관리
+- `useCurrentLocation`: 위치-주소 변환 통합 관리
+- `useFavorites`: 즐겨찾기 상태 관리
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### 3. 사용자 경험(UX) 개선
+- 실시간 날씨 정보 업데이트
+- 직관적인 날씨 정보 시각화
