@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-sm fixed sm:relative w-full">
+    <header className="bg-white shadow-sm fixed sm:relative w-full z-10">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="text-xl font-semibold">
           <Home className="block sm:hidden" />
